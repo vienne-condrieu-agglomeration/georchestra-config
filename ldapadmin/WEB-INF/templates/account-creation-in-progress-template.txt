@@ -1,0 +1,8 @@
+Cher {name}, 
+
+Votre demande de création d'un nouveau compte sera traitée sous peu.
+
+Votre login est: {uid}
+
+---
+Envoyé par : @shared.instance.name@ (@shared.homepage.url@)

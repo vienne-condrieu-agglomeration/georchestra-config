@@ -1,0 +1,243 @@
+# build_support/shared.maven.filters
+#
+# This file is the primary configuration file for your SDI (spatial data infrastructure).
+# It overrides the geOrchestra default parameters to suit your SDI environment.
+# Secondary configuration files refers to shared.maven.filters parameters using the syntax
+# @shared.[parameter.name]@
+
+
+# Instance name
+# This name appears in many places across the SDI, typically page titles.
+# Defaults to geOrchestra but could be GeoBretagne, GeoBolivia, etc
+#
+#shared.instance.name=geOrchestra
+
+# --------------------------------------------------
+# PUBLIC URL
+# --------------------------------------------------
+
+# sets the public address and port of your SDI.
+# shared.server.port defaults to 80
+# + example +
+# If your server is http://localhost:8080/ :
+# shared.server.name=localhost
+# shared.server.port=8080
+#
+shared.server.name=geo.viennagglo.fr
+
+# sets the public address of your homepage.
+# Defaults to http://@shared.server.name@/
+#
+shared.homepage.url=http://@shared.server.name@/
+
+# --------------------------------------------------
+# LANGUAGE
+# --------------------------------------------------
+
+# sets the language for all modules
+# May be one of the following: fr, es, en
+# Default value: en
+#
+shared.language=fr
+
+
+# --------------------------------------------------
+# HEADER
+# --------------------------------------------------
+
+# Sets the header height (in pixels) across all geOrchestra webapps
+# Defaults to 90
+shared.header.height=50
+
+
+# --------------------------------------------------
+# GEONETWORK
+# --------------------------------------------------
+shared.geonetwork.language=fre
+shared.psql.geonetwork.db=geonetwork
+
+
+# --------------------------------------------------
+# LDAP
+# --------------------------------------------------
+
+# how geOrchestra should connect to the ldap directory
+# + example +
+# shared.ldap.host=localhost
+# shared.ldap.port=389
+#
+shared.ldap.host=localhost
+shared.ldap.port=389
+
+# shared.ldapUrl is automatically computed with the above
+# shared.ldap parameters but you may override this setting
+#
+shared.ldapUrl=ldap://@shared.ldap.host@:@shared.ldap.port@
+
+
+# how geOrchestra should query the ldap directory.
+# shared.ldap.baseDn is the top level of the directory tree
+# shared.ldap.userSearchBaseDN is the query filter for users
+# shared.ldap.groupSearchBaseDN is the query filter for groups
+# shared.ldap.admin.dn is the query filter for the ldap admin user
+# shared.ldap.admin.password is the ldap admin user password
+# + example +
+# shared.ldap.baseDn=dc=georchestra,dc=org
+# shared.ldap.userSearchBaseDN=ou=users
+# shared.ldap.groupSearchBaseDN=ou=groups
+# shared.ldap.admin.dn=cn=admin,@shared.ldap.baseDn@
+# shared.ldap.admin.password=secret
+#
+shared.ldap.baseDn=dc=georchestra,dc=org
+shared.ldap.userSearchBaseDN=ou=users
+shared.ldap.groupSearchBaseDN=ou=groups
+shared.ldap.admin.dn=cn=admin,@shared.ldap.baseDn@
+shared.ldap.admin.password=secret
+
+
+# --------------------------------------------------
+# GEOSERVER
+# --------------------------------------------------
+
+# geOrchestra uses a privileged account to query geoserver
+# with full admin privileges.This user MUST exist in the ldap
+# directory and MUST belong to the ADMINISTRATOR group.
+# + example +
+# shared.privileged.geoserver.user=extractorapp_privileged_admin
+# shared.privileged.geoserver.pass=gerlsSnFd6SmM
+#
+shared.privileged.geoserver.user=geoserver_privileged_user
+shared.privileged.geoserver.pass=gerlsSnFd6SmM
+
+
+# --------------------------------------------------
+# MAPFISHAPP VIEWER
+# --------------------------------------------------
+
+# the mapfishapp viewer expires wmc and sld every x minutes
+# (44640 minutes means "1 month permalink validity")
+shared.mapfishapp.maxDocAgeInMinutes=44640
+# ...and this is the directory where temporary documents are 
+# stored:
+shared.mapfishapp.docTempDir=/tmp/mapfishapp
+
+
+# --------------------------------------------------
+# SMTP / Emails
+# --------------------------------------------------
+
+# geOrchestra send notification mails about pending
+# and completed extraction requests. Use the following parameters
+# according to your platform smtp gateway
+# + example +
+# shared.smtp.host=localhost
+# shared.smtp.port=25
+shared.email.replyTo=igeo\@viennagglo.fr
+shared.email.from=igeo\@viennagglo.fr
+#
+shared.smtp.host=localhost
+shared.smtp.port=25
+
+# for emails sent by extractorapp:
+shared.email.replyTo=igeo\@viennagglo.fr
+shared.email.from=igeo\@viennagglo.fr
+
+# the following email receives new account requests if ldapadmin
+# is configured with moderatedSignup = true (which is the default)
+shared.administrator.email=igeo\@viennagglo.fr
+
+# send notification mails in HTML ?
+# Defaults to: false (ie. plain text emails)
+# If you change this value to true, you should also modify the emails
+# templates in order to have full HTML emails.
+shared.email.html=false
+
+
+# --------------------------------------------------
+# LOGFILES
+# --------------------------------------------------
+
+# geOrchestra redirects logs to the shared.log.dir directory.
+# This directory must exist and must be writeable by the tomcat user
+# + example +
+# shared.log.dir=/var/log/tomcat6
+#
+# Here we use /tmp because we want to prevent this kind of error 
+# http://applis-bretagne.fr/redmine/issues/4311 when Tomcat is not installed
+#
+shared.log.dir=/tmp
+
+#Niveau de log : par defaut : WARN
+shared.default.log.level=DEBUG
+
+# --------------------------------------------------
+# DATABASES
+# --------------------------------------------------
+
+# geOrchestra stores some informations in several postgresql database.
+# We assume that all databases are hosted on the same pg cluster
+# but you may override this setting in the secondary configuration files.
+# Make sure that the pg_hba.conf allows connections from the server
+# hosting georchestra with the appropriate credentials
+# + example +
+# shared.psql.host=localhost
+# shared.psql.port=5432
+# shared.psql.user=www-data
+# shared.psql.pass=www-data
+#
+shared.psql.host=192.168.20.101
+shared.psql.port=5432
+shared.psql.user=dyndb
+shared.psql.pass=dyndb4751_
+
+
+# --------------------------------------------------
+# DOWNLOAD FORM
+# --------------------------------------------------
+
+# If the downloadform feature is activated,
+# useds will be asked to fill a form, read and accept an agreement
+# (shared.download_form.pdfurl) prior to any download.
+# The downloadform will log every download request in a database,
+# see downloadform/database.sql
+# + example +
+# shared.download_form.activated=false
+# shared.psql.download_form.db=downloadform
+# shared.download_form.pdfurl=/_static/usage.pdf
+# or
+# shared.download_form.pdfurl=//url.to/cgu.pdf
+#
+shared.download_form.activated=true
+shared.psql.download_form.db=georchestra
+shared.download_form.pdfurl=/home/igeo/download/georchestra/config/configurations/viennagglo/mapfishapp/WEB-INF/print/background_A4_portrait.pdf
+
+
+# --------------------------------------------------
+# OGC statistics
+# --------------------------------------------------
+
+# If the OGC statistics feature is activated,
+# all queries to the OGC web services will be logged in a db.
+# see ogc-server-statistics/database.sql
+
+shared.ogc.statistics.activated=true
+shared.psql.ogc.statistics.db=georchestra
+
+
+# --------------------------------------------------
+# LDAPadmin
+# --------------------------------------------------
+
+shared.ldapadmin.db=georchestra
+
+
+# --------------------------------------------------
+# HEALTH CHECK properties
+# --------------------------------------------------
+
+# If the HEALTH CHECK feature is activated, the security proxy 
+# monitors db connections and reports when a limit is reached.
+
+shared.checkhealth.activated=false
+shared.psql.checkhealth.db=@shared.psql.geonetwork.db@
+shared.checkhealth.max_db_connections=170

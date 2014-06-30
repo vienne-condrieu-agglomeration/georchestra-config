@@ -1,0 +1,15 @@
+L'extraction que vous avez demandée à la plate-forme geOrchestra est terminée.
+
+Télécharger votre fichier ici {link}. Il sera disponible pendant {expiry} jours
+
+Les couches suivantes ont été extraites correctement:
+{successes}
+
+Les couches suivantes n'ont pas pu être extraites. le fichier failures.html contient plus d'informations:
+{failures}
+
+L'extraction des couches suivantes a été annulée. L'étendue demandée est trop grande:
+{oversized}
+
+---
+Envoyé par @shared.instance.name@ (@shared.homepage.url@)

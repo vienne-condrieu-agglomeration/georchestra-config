@@ -1,0 +1,64 @@
+.navbar {
+    z-index: 1000000;
+}
+.navbar-brand{
+    padding: 0px 5px;
+}
+
+.login{
+    float : right;
+    margin-right : 10px
+    
+}
+
+li:hover{
+    background-color : rgb(220,220,220);
+}
+
+.visible-xs  li  a  {
+    float:left;
+    font-size:25px;
+    padding : 10px;
+}
+
+.loginb{
+    float : right;
+    margin-right : 20px;
+}
+img{
+    margin : 5px;
+}
+    
+.navbar-nav{
+    margin-top : 0px;
+    margin-bottom :0px;
+}
+
+.glyphicon-globe{
+    color : rgb(50,130,190);
+}
+
+.glyphicon-download-alt{
+    color : rgb(100,190,100);
+}
+
+.glyphicon-wrench{
+    color : rgb(230,190,50);
+}
+
+.glyphicon-home{
+    color : rgb(210,100,100);
+}
+
+.glyphicon-search{
+    color : rgb(110,110,180);
+}
+
+#reload{
+    cursor : pointer;
+}
+
+#fade{
+    background: none;
+    padding-top: 8px;    
+}
