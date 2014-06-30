@@ -187,7 +187,7 @@ shared.default.log.level=DEBUG
 #
 shared.psql.host=192.168.20.101
 shared.psql.port=5432
-shared.psql.user=dyndb
+shared.psql.user=user
 shared.psql.pass=password
 
 
