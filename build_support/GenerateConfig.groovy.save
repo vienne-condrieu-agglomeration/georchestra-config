@@ -165,7 +165,7 @@ class GenerateConfig {
     def updateSecProxyMavenFilters() {
 
         def proxyDefaultTarget = "http://localhost:8180"
-        def proxyGeoserver= "http://192.168.20.114"
+        def proxyGeoserver= "http://192.168.20.114
 
         new PropertyUpdate(
             path: 'maven.filter',
@@ -174,22 +174,22 @@ class GenerateConfig {
         ).update { properties ->
             properties['cas.private.host'] = "localhost"
             properties['public.ssl'] = "443"
-            properties['private.ssl'] = "8543"
+            properties['private.ssl'] = "8443"
             properties['proxy.defaultTarget'] = proxyDefaultTarget
-            properties['proxy.geoserver'] = proxyGeoserver
             properties['proxy.mapping'] = """
+    
 <entry key="analytics"     value="proxyDefaultTarget/analytics/" />
 <entry key="catalogapp"    value="proxyDefaultTarget/catalogapp/" />
 <entry key="downloadform"  value="proxyDefaultTarget/downloadform/" />
 <entry key="extractorapp"  value="proxyDefaultTarget/extractorapp/" />
 <entry key="geonetwork"    value="proxyDefaultTarget/geonetwork/" />
-<entry key="geoserver"     value="proxyGeoserver/geoserver/" />
+<entry key="geoserver"     value="proxyDefaultTarget/geoserver/" />
 <entry key="geowebcache"   value="proxyDefaultTarget/geowebcache/" />
 <entry key="geofence"      value="proxyDefaultTarget/geofence/" />
 <entry key="header"        value="proxyDefaultTarget/header/" />
 <entry key="ldapadmin"     value="proxyDefaultTarget/ldapadmin/" />
 <entry key="mapfishapp"    value="proxyDefaultTarget/mapfishapp/" />
-<entry key="static"        value="proxyDefaultTarget/header/" />""".replaceAll("\n|\t","").replaceAll("proxyDefaultTarget",proxyDefaultTarget).replaceAll("proxyGeoserver",proxyGeoserver)
+<entry key="static"        value="proxyDefaultTarget/header/" />""".replaceAll("\n|\t","").replaceAll("proxyDefaultTarget",proxyDefaultTarget)
             properties['header.mapping'] = """
 <entry key="sec-email"     value="mail" />
 <entry key="sec-firstname" value="givenName" />
@@ -216,8 +216,8 @@ class GenerateConfig {
         ).update { properties ->
             // ReCaptcha keys for your own domain: 
             // (these are the ones for sdi.georchestra.org, they won't work for you !!!)
-            properties['privateKey'] = "6LeB5PYSAAAAAFyB07TzShEZaNKMpr9PohMkz0TR"
-            properties['publicKey'] = "6LeB5PYSAAAAAHPvEewPX7DCKMo7YpQiTGKC0_Y5"
+            properties['privateKey'] = "6LcfjucSAAAAAKcnHp14epYOiWOIUfEculd4PvLV"
+            properties['publicKey'] = "6LcfjucSAAAAAKtNoK5r7IIXxBT-33znNJUgeYg1"
             // Email subjects:
             properties['subject.account.created'] = "["+instanceName+"] Your account has been created"
             properties['subject.account.in.process'] = "["+instanceName+"] Your new account is waiting for validation"

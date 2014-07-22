@@ -54,7 +54,7 @@ shared.header.height=50
 # GEONETWORK
 # --------------------------------------------------
 shared.geonetwork.language=fre
-shared.psql.geonetwork.db=geonetwork
+#1401 shared.psql.geonetwork.db=geonetwork
 
 
 # --------------------------------------------------
@@ -119,7 +119,7 @@ shared.privileged.geoserver.pass=gerlsSnFd6SmM
 shared.mapfishapp.maxDocAgeInMinutes=44640
 # ...and this is the directory where temporary documents are 
 # stored:
-shared.mapfishapp.docTempDir=/tmp/mapfishapp
+#1401 shared.mapfishapp.docTempDir=/tmp/mapfishapp
 
 
 # --------------------------------------------------
@@ -188,7 +188,7 @@ shared.default.log.level=DEBUG
 shared.psql.host=192.168.20.101
 shared.psql.port=5432
 shared.psql.user=user
-shared.psql.pass=password
+shared.psql.pass=pass_
 
 
 # --------------------------------------------------
@@ -208,8 +208,8 @@ shared.psql.pass=password
 # shared.download_form.pdfurl=//url.to/cgu.pdf
 #
 shared.download_form.activated=true
-shared.psql.download_form.db=georchestra
-shared.download_form.pdfurl=/home/igeo/download/georchestra/config/configurations/viennagglo/mapfishapp/WEB-INF/print/background_A4_portrait.pdf
+#1401 shared.psql.download_form.db=georchestra
+shared.download_form.pdfurl=/home/adminsig/download/licence_ouverte.pdf
 
 
 # --------------------------------------------------
@@ -221,14 +221,13 @@ shared.download_form.pdfurl=/home/igeo/download/georchestra/config/configuration
 # see ogc-server-statistics/database.sql
 
 shared.ogc.statistics.activated=true
-shared.psql.ogc.statistics.db=georchestra
-
+#14.01 shared.psql.ogc.statistics.db=georchestra
 
 # --------------------------------------------------
 # LDAPadmin
 # --------------------------------------------------
 
-shared.ldapadmin.db=georchestra
+#1401 shared.ldapadmin.db=georchestra
 
 
 # --------------------------------------------------

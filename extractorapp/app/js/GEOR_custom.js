@@ -16,21 +16,21 @@ GEOR.custom = {
      * Integer value representing the header height, as set in the shared maven filters
      * Defaults to 90
      */
-    HEADER_HEIGHT: @shared.header.height@,
+    HEADER_HEIGHT: 50,
 
     /**
      * Constant: DOWNLOAD_FORM
      * Boolean: should the app display a form requesting user data and data usage ?
      * Defaults to true (see shared.download_form.activated var in shared.maven.filters file)
      */
-    DOWNLOAD_FORM: @shared.download_form.activated@,
+    DOWNLOAD_FORM: true,
     
     /**
      * Constant: PDF_URL
      * String: the URL to the downloaded data Terms Of Use
      * Defaults to /header/cgu.pdf (see shared.download_form.pdf_url var in shared.maven.filters file)
      */
-    PDF_URL: "@shared.download_form.pdfurl@",
+    PDF_URL: "/home/adminsig/download/licence_ouverte.pdf",
     
     /***** Beginning of config options which can be set in this file *****/
 
@@ -129,7 +129,7 @@ GEOR.custom = {
      * Defaults to "geor:countries"
      */
     //BASE_LAYER_NAME: "GSHHS_l_L1",
-	BASE_LAYER_NAME: "julien:capv_dgi_commune",
+	BASE_LAYER_NAME: "Cadastre:capv_dgi_commune",
         
     /**
      * Constant: NS_LOC
@@ -259,7 +259,7 @@ GEOR.custom = {
         {
             owstype: "WMS",
             owsurl: "http://geo.viennagglo.fr/geoserver/wms",
-            layername: "julien:capv_dgi_commune"
+            layername: "Cadastre:capv_dgi_commune"
         }
     ],
     
@@ -269,15 +269,30 @@ GEOR.custom = {
      */
     STARTUP_SERVICES: [
 		{
-            text: "ViennAgglo public",
+            text: "Cadastre",
             owstype: "WMS",
-            owsurl: "http://geo.viennagglo.fr/geoserver/julien/wms/"
+            owsurl: "http://geo.viennagglo.fr/geoserver/Cadastre/wms/"
+        },
+	{
+            text: "Cadastre privé",
+            owstype: "WMS",
+            owsurl: "http://geo.viennagglo.fr/geoserver/cadastre_prive/wms/"
         },
         {
-            text: "ViennAgglo privee",
+            text: "Zonage INSEE",
             owstype: "WMS",
-            owsurl: "http://geo.viennagglo.fr/geoserver/prive/wms/"
-        }
+            owsurl: "http://geo.viennagglo.fr/geoserver/Zonage_INSEE/wms/"
+        },
+	 {
+            text: "Transport",
+            owstype: "WMS",
+            owsurl: "http://geo.viennagglo.fr/geoserver/transport/wms/"
+        },
+ {
+            text: "Adduction d'eau potable",
+            owstype: "WMS",
+            owsurl: "http://geo.viennagglo.fr/geoserver/aep/wms/"
+        },
     ],
 
     /**
