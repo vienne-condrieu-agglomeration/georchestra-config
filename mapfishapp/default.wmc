@@ -5,7 +5,7 @@
         <BoundingBox minx="830000" miny="6480000" maxx="870000" maxy="6510000" SRS="EPSG:2154" />
         <Title />
         <Extension>
-            <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.236499999999" miny="6037008.69390000030" maxx="1100000" maxy="7289352.96509999968" />
+            <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.236499999999" miny="6037008.69390000030" maxx="894521.034699999960" maxy="7289352.96509999968" />
         </Extension>
     </General>
     <LayerList>

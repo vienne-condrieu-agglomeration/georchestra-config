@@ -37,36 +37,5 @@
     <script type="text/javascript" src="../js/ext/adapter/ext/ext-base.js"></script>
     <script type="text/javascript" src="../js/ext/ext-all.js"></script>
     <script type="text/javascript" src="js/App-mini.js"></script>
-    <script type="text/javascript" >
-function getParamValue(param,url){
-    var u = url == undefined ? document.location.href : url;
-    var reg = new RegExp('(\\?|&|^)'+param+'=(.*?)(&|$)');
-    matches = u.match(reg);
-    return (matches && matches[2] != undefined) ? decodeURIComponent(matches[2]).replace(/\+/g,' ') : '';
-}
-
-function main(){
-    var items = Ext.DomQuery.select('a[rel=lightbox]');
-
-    Ext.each(items,function(item,i){
-        //RECUPERATION DE LA REQUETE WMS
-        var wms = item.getAttribute('href');
-
-        if(getParamValue('SERVICE', wms)) {
-                   //JS PUR - PAS EXT
-                   item.removeAttribute('rel');
-                   //RECUPERATION DU NOM DE LA COUCHE A AFFICHER SUR LE SVIEWER
-                   var layer = getParamValue('LAYERS', wms);
-                   //SUPPRESSION DE L'ATTRIBUT REL POUR SUPPRIMER LE COMPORTEMENT LIGHTBOX
-                   item.removeAttribute('href');
-                   //ON AJOUTE NOS ATTRIBUTS AVEC LES BONNES VALEURS !
-                   item.setAttribute('href','http://geo.viennagglo.fr/sviewer?layers=' + layer);
-                   item.setAttribute('target','_blank');
-        }
-    });
-}
-
-setInterval(main,1000);
-</script>
   </body>
 </html>

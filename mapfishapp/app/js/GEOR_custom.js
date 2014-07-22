@@ -15,7 +15,7 @@ GEOR.custom = {
      * Integer value representing the header height, as set in the shared maven filters
      * Defaults to 90
      */
-    HEADER_HEIGHT: 50,
+    HEADER_HEIGHT: @shared.header.height@,
 
     /***** Beginning of config options which can be set in this file *****/
 
@@ -205,7 +205,6 @@ GEOR.custom = {
      * It is highly recommended to upload new thesauri and to change this setting.
      */
     //DEFAULT_THESAURUS_KEY: 'local.theme.test',
-    DEFAULT_THESAURUS_KEY: 'external.theme.gemet-theme',
 
     /**
      * Constant: MAX_FEATURES
@@ -342,28 +341,28 @@ GEOR.custom = {
      * {Float} The max extent xmin in MAP_SRS coordinates.
      * Defaults to -20037508.34
      */
-    MAP_XMIN: -357823.2365,
+    MAP_XMIN: 830000.0,
 
     /**
      * Constant: MAP_YMIN aka "bottom"
      * {Float} The max extent ymin in MAP_SRS coordinates.
      * Defaults to -20037508.34
      */
-    MAP_YMIN: 6037008.6939,
+    MAP_YMIN: 6480000.0,
 
     /**
      * Constant: MAP_XMAX aka "right"
      * {Float} The max extent xmax in MAP_SRS coordinates.
      * Defaults to 20037508.34
      */
-    MAP_XMAX: 1313632.3628,
+    MAP_XMAX: 870000.0,
 
     /**
      * Constant: MAP_YSMAX aka "top"
      * {Float} The max extent ymax in MAP_SRS coordinates
      * Defaults to 20037508.34
      */
-    MAP_YMAX: 7230727.3772,
+    MAP_YMAX: 6510000.0,
 
     /**
      * Constant: POINTER_POSITION_SRS_LIST
@@ -591,7 +590,7 @@ GEOR.custom = {
      * {RegExp} 
      * PLatform layers only with this config
      */
-    EDITABLE_LAYERS: /.*geo.viennagglo.fr.*/i,
+    EDITABLE_LAYERS: /.*@shared.server.name@.*/i,
 
     /**
      * Constant: FORCE_LOGIN_IN_TOOLBAR
@@ -673,4 +672,4 @@ GEOR.custom = {
     WFS_SERVERS: [
     ]
     // No trailing comma for the last line (or IE will complain)
-};
+}
